@@ -2,26 +2,263 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.layout {
+  @apply w-full flex md:flex-row flex-col md:min-h-screen h-full
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.sublayout {
+  @apply w-full max-h-screen
+}
+
+.sublayout__empty_page {
+  @apply w-full md:h-screen flex justify-center items-center p-[20px]
+}
+
+.sublayout_container {
+  @apply flex w-full md:py-[43px] md:px-[41px]
+}
+
+.sublayout_container_room_detail {
+  @apply flex w-full
+}
+
+.sublayout_container__explore {
+  @apply flex justify-between w-full
+}
+
+.text__error_message {
+  @apply xl:text-[38px] md:text-[20px] text-[18px] text-center font-medium text-primary-color leading-[96px]
+}
+
+.input__search {
+  @apply w-full rounded-[10px] border-none bg-primary-light-color h-[56px] placeholder:px-[31px]
+}
+
+.card {
+  @apply flex flex-col
+}
+
+.card__detail_container {
+  @apply flex flex-col justify-between
+}
+
+.card__title {
+  @apply text-[20px] font-medium leading-[16px]
+}
+
+.card__description {
+  @apply text-[16px] font-medium leading-[16px]
+}
+
+.card__btn_detail {
+  @apply bg-white text-primary-color rounded-[4px] border drop-shadow-3xl  h-[52px] max-w-[194px]
+}
+
+.list__card {
+  @apply flex flex-col
+}
+
+.list__card_utils {
+  @apply flex justify-between mt-[20px] items-center
+}
+
+.list__card_utils_title {
+  @apply text-[20px] font-medium leading-[36px] text-[#221f3c]
+}
+
+.list__card_utils_button {
+  @apply rounded-[4px] border-primary-color bg-white border h-[56px]
+}
+
+.list__card_utils_button__text {
+  @apply text-primary-color pt-[14px] pb-[13px] pl-[16px] pr-[15px] text-[20px] font-medium
+}
+
+.list__card_container {
+  @apply flex w-full flex-wrap py-[12px] gap-[22px] lg:justify-start 2xl:justify-evenly justify-evenly
+}
+
+.recommended {
+  @apply hidden lg:flex flex-col flex-wrap drop-shadow-4xl mt-[75px] bg-white pt-[28px] pl-[15px] pr-[14px] 
+}
+
+.recommended__container {
+  @apply pb-[33px]
+}
+
+.payment_detail {
+  @apply md:px-[47px] md:pt-[131px] p-[40px]
+}
+
+.payment_detail__title {
+  @apply text-[24px] font-medium leading-[130px] text-[#221f3c]
+}
+
+.payment_summary {
+  @apply flex flex-col gap-[11px] h-full 2xl:w-[520px] border drop-shadow-5xl px-[26px] pt-[47px] pb-[42px] 2xl:mt-[214px] 2xl:mr-[80px] w-full
+}
+
+.payment_summary__container {
+  @apply flex justify-between
+}
+
+.payment_summary__title {
+  @apply text-[20px] font-medium leading-[36px] text-[#0000008c]
+}
+
+.payment_summary__price {
+  @apply text-[20px] font-medium leading-[36px] text-[#b7bcf3]
+}
+
+.payment_summary__title_last {
+  @apply text-[22px] font-bold leading-[36px] text-[#2d3ddf] 
+}
+
+.payment_summary__price_last {
+  @apply text-[22px] font-bold leading-[36px] text-[#2d3ddf] 
+}
+
+.btn__primary {
+  @apply bg-primary-color h-[62px] rounded-[4px]
+}
+
+.btn__primary_text {
+  @apply text-[22px] font-medium text-white pl-[88px] pr-[89px] pt-[16px] pb-[14px]
+}
+
+.explore_img__container {
+  @apply w-full h-full max-w-[983px] max-h-[1080px] relative 3xl:block hidden
+}
+
+.explore_action__container {
+  @apply flex flex-col w-full md:h-screen pb-[120px] h-full overflow-auto 3xl:max-w-[760px] px-[30px] pt-[43px]
+}
+
+.explore_action__header {
+  @apply text-[38px] font-medium text-primary-color mt-[60px] 
+}
+
+.explore_action__icon_container {
+  @apply flex justify-between items-center lg:px-[144px] px-[10px] h-[84px] mb-[31px]
+}
+
+.background-gradient {
+  @apply rounded-[32px] absolute w-full h-full bg-[linear-gradient(150deg,rgba(45,61,223,0)_24.00%,#171f70_100.00%)] top-0
+}
+
+.explore_action__form_container {
+  @apply flex flex-col w-full mb-[41px]
+}
+
+.input__search_list_container {
+  @apply flex items-center w-full h-[62px] bg-white border rounded-[4px] border-[#bec3ff]
+}
+
+.input__search_list {
+  @apply ml-[40px] bg-transparent border-none h-full w-full outline-none
+}
+
+.input__search_list_horizontal {
+  @apply ml-[40px] bg-white border-none h-full w-full outline-none
+}
+
+.input__search_list_amount_container {
+  @apply flex items-center w-full h-[62px] border rounded-[4px] border-primary-light-color bg-[#F2F3FF]
+}
+
+.input__search_list_amount_container_custom {
+  @apply flex items-center w-full h-[62px] border rounded-[4px] border-[#bec3ff] bg-white
+}
+
+.recent_search__container {
+  @apply flex flex-col gap-[24px]
+}
+
+.campaign_box__container {
+  @apply flex flex-row
+}
+
+.campaign_box__img {
+  @apply max-w-[192px] max-h-[173px] w-full
+}
+
+.campaign_box__content {
+  @apply flex w-full
+}
+
+.campaign_box__content_container {
+  @apply flex
+}
+
+.campaign_box__botton_container {
+  @apply bg-primary-color w-[64px]
+}
+
+.recent_search__title {
+  @apply text-[20px] text-[#221f3c]
+}
+
+.image_list__container {
+  @apply flex gap-[12px] flex-wrap p-[10px] xl:p-0
+}
+
+.error__input {
+  @apply border-red-500
+}
+
+.btn__take_tour {
+  border-color: rgba(255,255,255,0.35 );
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.4 );
+  background: linear-gradient(134deg, 
+  rgba(255,255,255,0.4 ) 0.00%, 
+  rgba(255,255,255,0.3 ) 100.00%);
+  padding: 18px 40px;
+}
+
+.text__vertical {
+  writing-mode: vertical-rl;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.date_picker_custom {
+  display: flex !important;
+  align-items: center;
+  margin-bottom: 14px;
+  background: #F2F3FF;
+  height: 62px;
+  width: 100%;
+  padding-left: 88px !important;
+  border: 1px solid #bec3ff !important;
+
+}
+
+.date_picker_custom_horizontal {
+  display: flex !important;
+  align-items: center;
+  background: white;
+  height: 62px;
+  width: 100%;
+  padding-left: 35px !important;
+  border: 1px solid #bec3ff !important;
+}
+
+
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  height: 100%;
 }

@@ -1,6 +1,6 @@
 import { UNAVAILABLE_PAGE_DESCRIPTION } from "@/constants"
 
-export default function Home() {
+export default function Profile() {
   return (
     <div className="sublayout">
       <div className="sublayout__empty_page">

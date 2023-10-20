@@ -1,13 +1,18 @@
-import { UNAVAILABLE_PAGE_DESCRIPTION } from "@/constants"
+'use client'
 
-export default function Home() {
+import React from 'react'
+import { PAGE_NOT_FOUND } from '@/constants'
+
+const Error = () => {
   return (
     <div className="sublayout">
       <div className="sublayout__empty_page">
         <div className="text__error_message">
-          {UNAVAILABLE_PAGE_DESCRIPTION}
+          {PAGE_NOT_FOUND}
         </div>
       </div>
     </div>
   )
 }
+
+export default Error
